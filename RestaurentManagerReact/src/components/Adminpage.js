@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import Apis, { endpoints } from "../configs/Apis";
 import MySpinner from "../layout/MySpinner";
 
-const Home = () => {
+const Adminpage = () => {
     const [products, setProducts] = useState(null);
     const [q] = useSearchParams();
 
@@ -41,28 +41,31 @@ const Home = () => {
 
     return (
         <>
-        <h1 className="text-center text-primary mt-3">THỰC ĐƠN</h1>
+        <h1 className="text-center text-primary">Thực Đơn</h1>
+        <div className="d-flex flex-row-reverse " style={{marginRight: '18px'}}>
+        <Button className="mt-2" variant="primary" >Thêm Món</Button>
+        </div>
         <Row>
                 {products.map(p => {
-                    return <Col xs={12} md={3} className="mt-5">
+                    return <Col xs={12} md={3} className="mt-3">
                                 <Card style={{ width: '18rem' }}>
                                     <Card.Img variant="top" src={p.image} />
                                     <Card.Body>
                                         <Card.Title>{p.name}</Card.Title>
                                         <Card.Text>{p.price} VNĐ</Card.Text>
+                                        <Button className="mb-2 w-100" variant="primary">Xem chi tiết</Button>
                                         <Row className="col text-center">
-                                            <Col><Button xs="auto" variant="primary">Xem chi tiết</Button></Col>
-                                            <Col><Button xs="auto" variant="success">Đặt món</Button></Col>
+                                            <Col><Button className="w-100" xs="auto" variant="success">Cập nhật</Button></Col>
+                                            <Col><Button className="w-100" xs="auto" variant="danger">Xóa</Button></Col>
                                         </Row>
+                                        
                                     </Card.Body>
                                 </Card>
                             </Col>
-                })}
-            
+                })}   
         </Row>
-
         </>
     )
 }
 
-export default Home
+export default Adminpage

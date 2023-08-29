@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import { createContext, useReducer } from "react";
 import MyUserReducer from "./reducers/MyUserReducer";
 import cookie from "react-cookies";
+import Adminpage from "./components/Adminpage";
 
 export const MyUserContext = createContext();
 
@@ -22,6 +23,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/admin" element={<Adminpage />} />
           </Routes>
         </Container>
         <Footer />

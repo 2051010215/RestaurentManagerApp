@@ -39,7 +39,7 @@ const Header = () => {
        
         <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-            <Navbar.Brand href="#home">Onl Fooding</Navbar.Brand>   
+            <Navbar.Brand className="align-items-center d-flex" href="#home"><img src={require("../Aset/images/chef1.png")} style={{width:'70px'}}   className="me-1" />Onl Fooding</Navbar.Brand>   
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
