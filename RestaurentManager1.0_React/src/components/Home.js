@@ -2,12 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { Alert, Button, Card, Col, Row } from "react-bootstrap";
 import cookie from "react-cookies";
 import { Link, useSearchParams } from "react-router-dom";
-import { MyCartContext } from "../App";
+import { MyCartContext, MyUserContext } from "../App";
 import Apis, { endpoints } from "../configs/Apis";
 import MySpinner from "../layout/MySpinner";
 
+
 const Home = () => {
     const [, cartDispatch] = useContext(MyCartContext);
+    const [user, ] = useContext(MyUserContext);
     const [products, setProducts] = useState(null);
     const [q] = useSearchParams();
 
@@ -66,21 +68,24 @@ const Home = () => {
         return <MySpinner />
 
     if (products.length === 0)
-        return <Alert variant="info" className="mt-1">Không có sản phẩm nào!</Alert>
-
+        return <Alert variant="info" className="mt-5 text-center">Hết Hàng!</Alert>
+    console.log(user.userRole);
     return <>
         <h1 className="text-center text-info mt-4">THỰC ĐƠN</h1>
         <Row>
             {products.map(p => {
                 let url =  `/products/${p.id}`;
                 return <Col xs={12} md={3} className="mt-2">
-                            <Card>
-                                <Card.Img variant="top" src={p.image} className="rounded img-fluid"/>
+                            <Card className="h-100">
+                                <Card.Img variant="top" src={p.image} className="rounded img-fluid h-75 d-inline-block"/>
                                 <Card.Body>
                                     <Card.Title>{p.name}</Card.Title>
                                     <Card.Text>{p.price} VNĐ</Card.Text>
                                     <Link className="btn  btn-info" to={url} style={{marginRight: "5px"}} variant="primary">Xem chi tiết</Link>
-                                    <Button variant="danger" onClick={() => order(p)}>Đặt hàng</Button>
+                                    {user.userRole === "ROLE_USER"?
+                                        <Button variant="danger" onClick={() => order(p)}>Đặt hàng</Button>:
+                                        <Button variant="danger" disabled="true" >Đặt hàng</Button>  
+                                    }
                                 </Card.Body>
                             </Card>
                         </Col>

@@ -14,8 +14,6 @@ const Header = () => {
 
     useEffect(() => {
         const loadCates = async () => {
-            // let res = await fetch("http://localhost:8085/SaleAppV1/api/categories/");
-            // let data = await res.json();
             let res = await Apis.get(endpoints['categories']);
 
             setCategories(res.data);
@@ -59,7 +57,9 @@ const Header = () => {
                     <Link className="nav-link" to="/login">Đăng nhập</Link>
                     <Link className="nav-link" to="/register">Đăng ký</Link>
                 </>:<>
-                    <Link className="nav-link" to="/">Chào {user.username}!</Link>
+                
+                    <Link className="nav-link" to="/userdetails">Chào {user.username}!</Link>
+                    <img src={user.avatar} class="rounded-circle me-2" style={{width: 40}} alt="Avatar" />
                     <Button onClick={logout} variant="secondary">Đăng xuất</Button>
                 </>}
 

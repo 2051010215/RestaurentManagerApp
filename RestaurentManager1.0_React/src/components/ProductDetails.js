@@ -58,7 +58,6 @@ const ProductDetails = () => {
             </Col>
         </Row>
         <hr />
-        
         {user===null?<p>Vui lòng <Link to={url}>đăng nhập</Link> để bình luận!</p>:<>
             <Form.Control as="textarea" value={content} onChange={e => setContent(e.target.value)} rows={3} placeholder="Nội dung bình luận..." />
             <Button variant="info" onClick={addComment} className="mt-2 mb-2">Bình luận</Button>
@@ -67,11 +66,9 @@ const ProductDetails = () => {
         <hr />
         <ListGroup className="mt-2 mb-2">
             {comments.map(c => <ListGroup.Item key={c.id}>
-                <>    
+                {user.avatar}  
                 <p className="text-uppercase fs-5">{c.user.username}</p> - {c.content} - <mark><Moment locale="vi" fromNow>{c.createdDate}</Moment></mark>
-            </>
             </ListGroup.Item>)}
-            
         </ListGroup>
     </>
 }

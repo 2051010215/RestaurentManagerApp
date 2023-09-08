@@ -91,7 +91,7 @@ const Cart = () => {
            
         </tbody>
         </Table>
-        <Button variant="info" onClick={pay} className="mt-2 mb-2">Thanh toán</Button>
+        
         {user===null?<p>Vui lòng <Link to="/login?next=/cart">đăng nhập</Link> để thanh toán!</p>:<Button variant="info" onClick={pay} className="mt-2 mb-2">Thanh toán</Button>}
         
     </>

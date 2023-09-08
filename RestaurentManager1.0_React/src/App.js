@@ -14,6 +14,7 @@ import Cart from "./components/Cart";
 import ProductDetails from "./components/ProductDetails";
 import 'moment/locale/vi';
 import Admin from "./components/Admin";
+import UserDetails from "./components/UserDetails";
 
 export const MyUserContext = createContext();
 export const MyCartContext = createContext();
@@ -35,7 +36,6 @@ const App = () => {
       <MyCartContext.Provider value={[cart, cartDispatch]}>
         <BrowserRouter>
           <Header />
-
           <Container>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -44,9 +44,9 @@ const App = () => {
               <Route path="/cart" element={<Cart />} />
               <Route path="/products/:productId" element={<ProductDetails />} />
               <Route path="/admin" element={<Admin />} />
+              <Route path="/userdetails" element={<UserDetails />} />
             </Routes>
           </Container>
-
           <Footer />
         </BrowserRouter>
       </MyCartContext.Provider>
