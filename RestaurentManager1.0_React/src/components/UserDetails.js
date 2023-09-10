@@ -10,13 +10,13 @@ const UserDetails = () => {
 
     return (
         <>
-            <section className=" mt-3 bg-dark bg-gradient ">
+            <section className=" mt-3 bg-light bg-gradient ">
                 <div className="container py-5 h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col col-lg-6 mb-4 mb-lg-0">
-                            <div className="card mb-3" style={{ borderRadius: '.5rem' }}>
+                            <div className="card mb-3" style={{ borderRadius: '.6rem', borderColor:'lightblue' }}>
                                 <div className="row g-0">
-                                    <div className="col-md-4 text-center text-white bg-info bg-gradient" style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem'}}>
+                                    <div className="col-md-4 text-center text-white bg-info bg-gradient" style={{ borderTopLeftRadius: '.6rem', borderBottomLeftRadius: '.6rem'}}>
                                         <img src={user.avatar} alt="Avatar" className="img-fluid my-5" style={{ width: 165 }} />
                                         <h5>{user.username}</h5>
                                         <p>{user.userRole}</p>

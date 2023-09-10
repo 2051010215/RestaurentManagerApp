@@ -38,7 +38,7 @@ const Header = () => {
         return <MySpinner />;
 
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="bg-body-tertiary ">
             <Container>
             <Navbar.Brand className="align-items-center d-flex" href="/"><img alt="Logo" src={require("../Aset/images/chef1.png")} style={{ width: '70px' }} className="me-1" />Onl Fooding</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

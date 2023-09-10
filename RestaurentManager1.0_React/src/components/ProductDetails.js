@@ -45,7 +45,7 @@ const ProductDetails = () => {
 
     let url = `/login?next=/products/${product.id}`;
     return <>
-        <h1 className="text-center text-info mt-2">CHI TIẾT SẢN PHẨM Số {productId}</h1>
+        <h1 className="text-center text-info mt-2">CHI TIẾT SẢN PHẨM SỐ {productId}</h1>
 
         <Row>
             <Col>
@@ -59,10 +59,9 @@ const ProductDetails = () => {
         </Row>
         <hr />
         {user===null?<p>Vui lòng <Link to={url}>đăng nhập</Link> để bình luận!</p>:<>
-            <Form.Control as="textarea" value={content} onChange={e => setContent(e.target.value)} rows={3} placeholder="Nội dung bình luận..." />
-            <Button variant="info" onClick={addComment} className="mt-2 mb-2">Bình luận</Button>
+            <Form.Control as="textarea" value={content} onChange={e => setContent(e.target.value)} rows={3} placeholder="Bạn nghĩ gì về món này ăn..." />
+            <Button variant="info" onClick={addComment} className="mt-2 mb-2">Thêm cảm nghĩ</Button>
         </>}
-           
         <hr />
         <ListGroup className="mt-2 mb-2">
             {comments.map(c => <ListGroup.Item key={c.id}>

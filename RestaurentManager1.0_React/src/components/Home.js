@@ -69,7 +69,7 @@ const Home = () => {
 
     if (products.length === 0)
         return <Alert variant="info" className="mt-5 text-center">Hết Hàng!</Alert>
-    console.log(user.userRole);
+
     return <>
         <h1 className="text-center text-info mt-4">THỰC ĐƠN</h1>
         <Row>
