@@ -59,13 +59,12 @@ const Header = () => {
                 </>:<>
                 
                     <Link className="nav-link" to="/userdetails">Chào {user.username}!</Link>
-                    <img src={user.avatar} class="rounded-circle me-2" style={{width: 40}} alt="Avatar" />
+                    <img src={user.avatar} class="rounded-circle me-4" style={{width: 40}} alt="Avatar" />
                     <Button onClick={logout} variant="secondary">Đăng xuất</Button>
                 </>}
-
-                <Link className="nav-link" to="/cart">&#128722; <Badge bg="danger">{cartCounter}</Badge></Link>
-                
                 </Nav>
+                <Link className="nav-link me-5 " to="/cart">&#128722; <Badge bg="danger">{cartCounter}</Badge></Link>
+                
             </Navbar.Collapse>
             <Form onSubmit={search} inline>
                 <Row>

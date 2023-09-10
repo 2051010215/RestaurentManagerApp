@@ -83,8 +83,8 @@ const Home = () => {
                                     <Card.Text>{p.price} VNĐ</Card.Text>
                                     <Link className="btn  btn-info" to={url} style={{marginRight: "5px"}} variant="primary">Xem chi tiết</Link>
                                     {user.userRole === "ROLE_USER"?
-                                        <Button variant="danger" onClick={() => order(p)}>Đặt hàng</Button>:
-                                        <Button variant="danger" disabled="true" >Đặt hàng</Button>  
+                                        <Button variant="danger" onClick={() => order(p)}>Thêm vào giỏ</Button>:
+                                        <Button variant="danger" disabled="true" >Thêm vào giỏ</Button>  
                                     }
                                 </Card.Body>
                             </Card>
