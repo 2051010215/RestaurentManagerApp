@@ -1,7 +1,7 @@
 import axios from "axios";
 import cookie from "react-cookies";
 
-const SERVER_CONTEXT = "/SaleAppV1";
+const SERVER_CONTEXT = "/RestaurentManager";
 const SERVER = "http://localhost:8080";
 
 export const endpoints = {
