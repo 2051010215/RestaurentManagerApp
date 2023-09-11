@@ -1,10 +1,17 @@
 import { useContext } from "react";
 import { MyUserContext } from "../App";
 import MySpinner from "../layout/MySpinner";
+import { Button } from "react-bootstrap";
 
 const UserDetails = () => {
-    const [user, ] = useContext(MyUserContext);
+    const [user, dispatch ] = useContext(MyUserContext);
     
+    const logout = () => {
+        dispatch({
+            "type": "logout"
+        })
+    }
+
     if (user === null)
         return <MySpinner/>
 
@@ -48,10 +55,10 @@ const UserDetails = () => {
                                                     <p className="text-muted">Dolor sit amet</p>
                                                 </div>
                                             </div>
-                                            <div className="d-flex justify-content-start">
-                                                <a href="#!"><i className="bg-color- fab fa-facebook-f fa-lg me-3" /></a>
-                                                <a href="#!"><i className="fab fa-twitter fa-lg me-3" /></a>
-                                                <a href="#!"><i className="fab fa-instagram fa-lg" /></a>
+                                            <div className="d-flex me-5">
+                                                
+                                                <Button className="me-4" varient>Chỉnh sửa thông tin</Button>
+                                                <Button onClick={logout} variant="danger">Đăng xuất</Button>
                                             </div>
                                         </div>
                                     </div>

@@ -1,10 +1,10 @@
 <%-- 
     Document   : header
-    Created on : Jul 22, 2023, 1:08:26 PM
+    Created on : Jul 22, 2023, 1:015:26 PM
     Author     : 1 9 9 8 N
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:url value="/" var="action" />
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">

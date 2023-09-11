@@ -6,7 +6,7 @@ import Apis, { endpoints } from "../configs/Apis";
 import MySpinner from "./MySpinner";
 
 const Header = () => {
-    const [user, dispatch] = useContext(MyUserContext);
+    const [user,] = useContext(MyUserContext);
     const [cartCounter, ] = useContext(MyCartContext);
     const [categories, setCategories] = useState(null)
     const [kw, setKw] = useState("")
@@ -28,11 +28,6 @@ const Header = () => {
         nav(`/?kw=${kw}`);
     }
 
-    const logout = () => {
-        dispatch({
-            "type": "logout"
-        })
-    }
 
     if (categories === null)
         return <MySpinner />;
@@ -60,10 +55,10 @@ const Header = () => {
                 
                     <Link className="nav-link" to="/userdetails">Chào {user.username}!</Link>
                     <img src={user.avatar} class="rounded-circle me-4" style={{width: 40}} alt="Avatar" />
-                    <Button onClick={logout} variant="secondary">Đăng xuất</Button>
+                    
                 </>}
                 </Nav>
-                <Link className="nav-link me-5 " to="/cart">&#128722; <Badge bg="danger">{cartCounter}</Badge></Link>
+                <Link className="nav-link me-5" to="/cart">&#128722; <Badge bg="danger">{cartCounter}</Badge></Link>
                 
             </Navbar.Collapse>
             <Form onSubmit={search} inline>
